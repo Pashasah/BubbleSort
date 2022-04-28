@@ -1,4 +1,5 @@
 #include <iostream>
+#include <stdlib.h>
 void swap(int* p1, int* p2)
 {
 	int temp = *p1;
@@ -24,8 +25,8 @@ void bSort(int arrnumbers[], int n)
 			if (arrnumbers[j] > arrnumbers[j + 1])
 			{
 				swap(&arrnumbers[j], &arrnumbers[j + 1]);
-				print(arrnumbers, n);
-				printf("    \n");
+				printf("   \n");
+				print(arrnumbers, n);	
 				check = true;
 			}
 		}
@@ -37,10 +38,17 @@ void bSort(int arrnumbers[], int n)
 // This the main program from where the execution will start
 int main()
 {
-	int arrnumbers[] = { 1000, 100, 10, 0 };
-	int n = sizeof(arrnumbers) / sizeof(arrnumbers[0]);
-	bSort(arrnumbers, n);
-	printf("Sorted array: \n");
-	print(arrnumbers, n);
-	return 0;
+		for (int k = 0; k < 15; k++) {
+		int arrnumbers[] = {rand()%15,-k * k, rand() % 10,rand() * 2, k / 3 * k / 2};
+		int n = sizeof(arrnumbers) / sizeof(arrnumbers[0]);
+		bSort(arrnumbers, n);
+		printf("\n"); 
+		printf("Sorted array: \n");
+		print(arrnumbers, n);
+		printf("   \n");
+		printf("   \n");
+		printf("   \n");
+	}
+					return 0;
 }
+
